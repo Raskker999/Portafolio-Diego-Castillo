@@ -20,33 +20,83 @@
 </ul>
 </nav>
 </header>
-<div class="page-head"><h1>Mon alternance chez Bobochic Paris</h1><p>Présentation de l’entreprise et de ma mission</p></div>
+<div class="ent-hero">
+  <!-- Média de couverture : image actuelle.
+       Pour passer à une vidéo : déposer le fichier dans videos/bobochic.mp4,
+       puis remplacer la balise <img> ci-dessous par :
+       <video class="ent-hero-media" src="videos/bobochic.mp4" poster="images/bobochic-hero.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+       L'image reste affichée comme image de secours (poster) pendant le chargement. -->
+  <img class="ent-hero-media" src="images/bobochic-hero.jpg" alt="" aria-hidden="true">
+  <div class="ent-hero-text">
+    <h1>Mon alternance chez Bobochic Paris</h1>
+    <p>Présentation de l’entreprise et de mon poste</p>
+  </div>
+</div>
 <main>
 <section class="section">
-  <div class="wrap stack">
-    <div class="card">
-      <h3>L’entreprise</h3>
-      <p><strong>Bobochic Paris</strong> est une entreprise française spécialisée dans la conception, la fabrication et la distribution de meubles contemporains et d’accessoires de décoration. Née sur internet en 2015, la marque développe aussi sa présence physique avec des boutiques éphémères à Paris et à Lille.</p>
+  <div class="wrap ent-story">
+    <div class="ent-row">
+      <div class="ent-text">
+        <span class="eyebrow">L’entreprise</span>
+        <h2 class="ent-title">Une marque de mobilier née sur internet</h2>
+        <p><strong>Bobochic Paris</strong> est une marque française de meubles contemporains et d’accessoires de décoration. Elle a été lancée en 2015 par <strong>Sébastien Réa</strong> et <strong>Emmanuel Mendes</strong> avec un apport de départ de 6&nbsp;000&nbsp;€, sans levée de fonds ni investisseur extérieur. D’abord 100&nbsp;% digitale, la marque s’est fait connaître par un style audacieux et une communication décalée, jusqu’à devenir un acteur reconnu du mobilier en ligne en France.</p>
+        <p>Exploitée par la société <strong>NEGOMARKETS</strong>, dont le siège est installé à Vincennes, l’entreprise a réalisé un chiffre d’affaires de 39,7&nbsp;M€ en 2022. Elle a également testé la vente physique avec des boutiques éphémères à Paris, à Lille et à Levallois-Perret.</p>
+      </div>
+      <figure class="ent-photo">
+        <img src="images/bobochic-boutique.jpg" alt="Boutique Bobochic Paris : vitrine avec l’enseigne et un salon meublé" loading="lazy">
+        <figcaption>Une boutique éphémère Bobochic Paris</figcaption>
+      </figure>
     </div>
-    <div class="card green">
-      <h3>Ma mission</h3>
-      <p>J’ai intégré l’entreprise en [mois année] en tant que [intitulé du poste]. Depuis mon arrivée, j’ai pu découvrir une équipe variée, et ma mission principale a consisté à structurer correctement le fonctionnement de l’ensemble du service informatique. Cela passe par la création des processus d’onboarding/offboarding, l’optimisation de la vitesse et de la sécurité du réseau, ainsi que la maintenance et le renouvellement du parc informatique. Actuellement, je suis le seul membre de l’équipe de support informatique.</p>
+
+    <div class="ent-row ent-row-stack">
+      <div class="ent-text">
+        <span class="eyebrow eyebrow-green">Mon poste</span>
+        <h2 class="ent-title">Technicien informatique au sein du Support</h2>
+        <p>J’ai rejoint l’équipe de Bobochic en octobre 2025 en tant que <strong>technicien informatique</strong> (intitulé officiel : <em>Digital workspace &amp; automation assistant</em>).</p>
+        <p>Dès mon arrivée, j’ai occupé un poste aux missions variées, allant de la maintenance et de la réparation du parc informatique à la gestion des droits d’accès des utilisateurs.</p>
+        <p>Aujourd’hui, je suis le seul membre de la <strong>BU Data</strong>, rattachée au service Support. Cette position me permet de travailler directement avec les différents collaborateurs de l’entreprise et de bénéficier d’une grande autonomie dans mon travail, notamment pour proposer et initier de nouveaux projets auprès de mon responsable.</p>
+      </div>
+      <figure class="ent-photo ent-org">
+        <a href="images/organigramme.png" target="_blank" rel="noopener" title="Agrandir l’organigramme">
+          <img src="images/organigramme.png" alt="Organigramme : la BU Data, dont je suis le seul membre, rattachée au service Support aux côtés des services Juridique, Finance et RH" loading="lazy">
+        </a>
+        <figcaption>Organigramme : la BU Data, rattachée au service Support – cliquez pour agrandir</figcaption>
+      </figure>
     </div>
-    <div class="card">
-      <h3>Identité de l’entreprise</h3>
-      <dl class="fiche">
-        <dt>Nom</dt><dd>Bobochic Paris</dd>
-        <dt>Création</dt><dd>2015</dd>
-        <dt>Statut juridique</dt><dd>[SAS, SARL… à vérifier sur le Kbis]</dd>
-        <dt>Siège social</dt><dd>[7 avenue de Paris, 94300 Vincennes – à vérifier]</dd>
-        <dt>Société mère</dt><dd>[À compléter]</dd>
-        <dt>Chiffre d’affaires</dt><dd>[Environ 50 M€ en 2022 – à vérifier]</dd>
-        <dt>Direction</dt><dd>[Nom, fonction]</dd>
-        <dt>Activités principales</dt><dd>Conception, fabrication et distribution de meubles contemporains et d’accessoires de décoration</dd>
-        <dt>Points de vente</dt><dd>Vente en ligne et boutiques éphémères à Paris et à Lille</dd>
-        <dt>Effectif</dt><dd>[À compléter]</dd>
-      </dl>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2>Identité de l’entreprise</h2>
+    <p class="lead">Les informations clés de Bobochic Paris</p>
+    <div class="id-grid">
+      <div class="id-tile"><span>Nom commercial</span><strong>Bobochic Paris</strong></div>
+      <div class="id-tile"><span>Société mère</span><strong>NEGOMARKETS</strong></div>
+      <div class="id-tile"><span>Création</span><strong>2015</strong></div>
+      <div class="id-tile"><span>Statut juridique</span><strong>SAS – société par actions simplifiée</strong></div>
+      <div class="id-tile"><span>Siège social</span><strong>5-7 avenue de Paris, 94300 Vincennes</strong></div>
+      <div class="id-tile"><span>Chiffre d’affaires</span><strong>39,7&nbsp;M€ en 2022</strong></div>
+      <div class="id-tile"><span>Direction</span><strong>Sébastien Réa et Emmanuel Mendes, cofondateurs</strong></div>
+      <div class="id-tile"><span>Effectif</span><strong>65 collaborateurs</strong></div>
+      <div class="id-tile"><span>Site web</span><strong><a href="https://bobochicparis.com/fr/" target="_blank" rel="noopener">bobochicparis.com</a></strong></div>
+      <div class="id-tile id-wide"><span>Activités principales</span>
+        <ul class="tags">
+          <li>Conception de meubles contemporains</li>
+          <li class="t-green">Accessoires de décoration</li>
+          <li>Vente en ligne</li>
+          <li class="t-orange">Boutiques éphémères</li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Localisation</h2>
+    <p class="lead">Siège social : 5-7 avenue de Paris, 94300 Vincennes</p>
+    <iframe class="map-frame" title="Carte : siège de Bobochic Paris à Vincennes" src="https://www.google.com/maps?q=5+avenue+de+Paris,+94300+Vincennes&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 </main>
