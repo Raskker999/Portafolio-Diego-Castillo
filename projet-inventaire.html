@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inventaire et étiquetage QR du parc – Portfolio BTS SIO 2027</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<header class="site-header">
+<nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="index.html">Portfolio BTS SIO <span>2027</span></a>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="entreprise.html">Entreprise</a></li>
+<li><a href="e5.html" aria-current="page">Épreuve E5</a></li>
+<li><a href="e6.html">Épreuve E6</a></li>
+<li><a href="veille.html">Veille technologique</a></li>
+</ul>
+</nav>
+</header>
+<div class="proj-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="e5.html">Épreuve E5</a> <span aria-hidden="true">›</span> <a href="e5.html#professionnel">Réalisations professionnelles</a></nav>
+    <span class="proj-kicker">Réalisation 02 · Oct. – nov. 2025</span>
+    <h1>Inventaire et étiquetage QR du parc</h1>
+    <p>Remise à jour complète de l’inventaire du parc informatique et mise en place d’un système d’étiquetage par QR code pour identifier chaque équipement.</p>
+  </div>
+</div>
+<main>
+<section class="section">
+  <div class="wrap proj-layout">
+    <article class="proj-body">
+      <section class="proj-sec" id="contexte">
+        <h2><span class="proj-num">01</span>Contexte</h2>
+        <p>Bobochic Paris est répartie sur quatre sites : le siège de Vincennes, un bureau à Toulouse, un entrepôt à Villebon et une boutique à Beaugrenelle, auxquels s’ajoutent plusieurs collaborateurs en télétravail complet.</p>
+        <p>À mon arrivée, l’inventaire du parc n’avait plus été mis à jour depuis 2024 environ et aucun équipement n’était étiqueté. Il était donc impossible de suivre le matériel : savoir ce qui existait, où il se trouvait et qui l’utilisait.</p>
+      </section>
+      <section class="proj-sec" id="besoin">
+        <h2><span class="proj-num">02</span>Expression du besoin</h2>
+        <p>Dès mon arrivée, ma première mission a été de mettre à jour l’inventaire, ou de le recréer si nécessaire. L’idée d’ajouter des étiquettes QR sur les équipements est une initiative personnelle. Les objectifs étaient :</p>
+        <ul class="check-list">
+          <li>disposer d’un inventaire fiable et à jour de l’ensemble du parc ;</li>
+          <li>identifier physiquement un équipement en quelques secondes ;</li>
+          <li>savoir quel collaborateur utilise quel matériel.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="solution">
+        <h2><span class="proj-num">03</span>Solution et mise en œuvre</h2>
+        <ol class="steps"><li><strong>Recensement du parc</strong><p>Relevé de chaque équipement dans un fichier Google Sheets : site, type, marque et modèle, numéro de série, utilisateur assigné et, pour les acquisitions récentes, date d’achat.</p></li><li><strong>Codification</strong><p>Utilisation d’abréviations courtes pour les sites (VIN, TLS…) et les types de matériel (LAP pour les portables, SCR pour les écrans, HDD pour les disques, TEL pour les téléphones).</p></li><li><strong>Recherche d’une méthode d’étiquetage</strong><p>Environ deux semaines consacrées à trouver une méthode adaptée pour générer les codes QR et imprimer les étiquettes avec le matériel disponible.</p></li><li><strong>Génération des QR codes</strong><p>Adaptation d’une formule existante dans Google Sheets pour générer un QR code statique par ligne. Il ne contient que les données fixes : site, type, modèle et numéro de série. L’utilisateur assigné reste dans une colonne séparée, car il change régulièrement et un QR statique ne peut pas être mis à jour.</p></li><li><strong>Impression et pose</strong><p>Impression sur du papier étiquette avec une imprimante standard, puis pose sur chaque équipement des différents sites.</p></li></ol>
+      </section>
+      <section class="proj-sec" id="resultats">
+        <h2><span class="proj-num">04</span>Tests et résultats</h2>
+        <div class="kpis"><div class="kpi"><span class="kpi-val">249</span><span class="kpi-lbl">équipements recensés</span></div><div class="kpi"><span class="kpi-val">4</span><span class="kpi-lbl">sites couverts</span></div><div class="kpi"><span class="kpi-val">≈ 6 semaines</span><span class="kpi-lbl">de la recherche au déploiement</span></div></div>
+        <p><strong>Tests.</strong> J’ai testé la lecture des étiquettes avec mon smartphone Android. La première version contenait trop d’informations : le QR code devenait trop dense et n’était pas lisible. J’ai réduit et abrégé les données jusqu’à obtenir un code fiable. Sur Android, l’appareil photo natif affiche directement les informations ; sur iOS, une application de lecture de QR codes est nécessaire.</p>
+        <p><strong>Résultats.</strong> Il est désormais beaucoup plus simple de localiser un équipement et de savoir qui utilise quel ordinateur. Le numéro de série inscrit sur l’étiquette est également celui des fiches de remise et de restitution, ce qui rend l’offboarding plus rapide.</p>
+      </section>
+      <section class="proj-sec" id="limites">
+        <h2><span class="proj-num">05</span>Limites et perspectives</h2>
+        <ul class="check-list is-arrow">
+          <li>Le QR code statique ne peut pas être modifié : toute évolution impose de réimprimer l’étiquette.</li>
+          <li>La lecture sur iOS nécessite une application tierce.</li>
+          <li>Les équipements des collaborateurs en télétravail ne sont pas étiquetés.</li>
+          <li>Perspective : migrer vers un outil de gestion de parc (de type GLPI ou Snipe-IT) avec des QR codes dynamiques renvoyant vers la fiche de chaque équipement.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="competences">
+        <h2><span class="proj-num">06</span>Compétences mobilisées</h2>
+        <ul class="comp-list"><li><strong>Gérer le patrimoine informatique</strong><span>Recensement et identification des équipements, suivi des affectations et des caractéristiques du parc.</span></li><li><strong>Travailler en mode projet</strong><span>Mission menée de bout en bout : recherche d’une méthode, tests, déploiement sur plusieurs sites.</span></li></ul>
+      </section>
+      <section class="proj-sec" id="preuves">
+        <h2><span class="proj-num">07</span>Preuves</h2>
+        <div class="gallery g3"><figure class="shot is-wide"><a href="images/e5/inventaire-qr.png" data-lightbox><img src="images/e5/inventaire-qr.png" alt="Extrait de l’inventaire Google Sheets avec QR codes générés" loading="lazy"></a><figcaption>Extrait de l’inventaire Google Sheets avec QR codes générés</figcaption></figure><figure class="shot "><a href="images/e5/etiquette-qr.jpg" data-lightbox><img src="images/e5/etiquette-qr.jpg" alt="Étiquette QR posée sur un équipement" loading="lazy"></a><figcaption>Étiquette QR posée sur un équipement</figcaption></figure><figure class="shot "><a href="images/e5/scan-qr.jpg" data-lightbox><img src="images/e5/scan-qr.jpg" alt="Résultat du scan d’une étiquette sur Android" loading="lazy"></a><figcaption>Résultat du scan d’une étiquette sur Android</figcaption></figure></div>
+      </section>
+    </article>
+    <aside class="proj-aside">
+      <div class="aside-card">
+        <h3>Fiche projet</h3>
+        <dl class="aside-facts"><dt>Type</dt><dd>Réalisation en milieu professionnel</dd><dt>Entreprise</dt><dd>Bobochic Paris</dd><dt>Période</dt><dd>Octobre – novembre 2025</dd><dt>Sites</dt><dd>Vincennes, Toulouse, Villebon, Beaugrenelle</dd><dt>Parc</dt><dd>249 équipements</dd><dt>Outils</dt><dd>Google Sheets, papier étiquette, imprimante, smartphone Android</dd></dl>
+        <h4>Compétences</h4>
+        <ul class="tags tags-col"><li class="">Gérer le patrimoine informatique</li><li class="">Travailler en mode projet</li></ul>
+        
+      </div>
+      <nav class="aside-toc" aria-label="Sommaire"><h4>Sommaire</h4><ol><li><a href="#contexte">Contexte</a></li><li><a href="#besoin">Expression du besoin</a></li><li><a href="#solution">Solution et mise en œuvre</a></li><li><a href="#resultats">Tests et résultats</a></li><li><a href="#limites">Limites et perspectives</a></li><li><a href="#competences">Compétences mobilisées</a></li><li><a href="#preuves">Preuves</a></li></ol></nav>
+    </aside>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap"><nav class="proj-pager" aria-label="Autres réalisations"><a class="pager-prev" href="projet-onboarding.html"><small>← Réalisation précédente</small><strong>Processus d’onboarding et d’offboarding</strong></a><a class="pager-back" href="e5.html#professionnel">Toutes les réalisations</a><a class="pager-next" href="projet-wifi.html"><small>Réalisation suivante →</small><strong>Optimisation du réseau Wi-Fi</strong></a></nav></div>
+</section>
+</main>
+<footer class="site-footer"><p>&copy; Diego Castillo – Portfolio BTS SIO 2027</p><p><a href="https://www.linkedin.com/in/diego-alberto-castillo-dc1997/" target="_blank" rel="noopener">LinkedIn</a></p></footer>
+<a class="totop" href="#top" aria-label="Retour en haut">↑</a>
+<script src="script.js"></script>
+</body>
+</html>

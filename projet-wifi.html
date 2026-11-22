@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimisation du réseau Wi-Fi – Portfolio BTS SIO 2027</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<header class="site-header">
+<nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="index.html">Portfolio BTS SIO <span>2027</span></a>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="entreprise.html">Entreprise</a></li>
+<li><a href="e5.html" aria-current="page">Épreuve E5</a></li>
+<li><a href="e6.html">Épreuve E6</a></li>
+<li><a href="veille.html">Veille technologique</a></li>
+</ul>
+</nav>
+</header>
+<div class="proj-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="e5.html">Épreuve E5</a> <span aria-hidden="true">›</span> <a href="e5.html#professionnel">Réalisations professionnelles</a></nav>
+    <span class="proj-kicker">Réalisation 03 · Mars 2026</span>
+    <h1>Optimisation du réseau Wi-Fi</h1>
+    <p>Diagnostic et reconfiguration des quatre bornes Ubiquiti UniFi de l’entreprise pour résoudre une lenteur importante du Wi-Fi et remettre en service une borne inactive.</p>
+  </div>
+</div>
+<main>
+<section class="section">
+  <div class="wrap proj-layout">
+    <article class="proj-body">
+      <section class="proj-sec" id="contexte">
+        <h2><span class="proj-num">01</span>Contexte</h2>
+        <p>Les bureaux de l’entreprise sont reliés à Internet par la fibre. Le Wi-Fi est assuré par quatre bornes Ubiquiti UniFi AC LR, administrées par la UniFi Network Application installée dans un conteneur Docker sur un NAS. Le maillage (meshing) entre les bornes était déjà activé. Une même borne peut accueillir jusqu’à 27 appareils connectés.</p>
+      </section>
+      <section class="proj-sec" id="besoin">
+        <h2><span class="proj-num">02</span>Expression du besoin</h2>
+        <p>Les utilisateurs signalaient deux problèmes :</p>
+        <ul class="check-list">
+          <li>un débit Wi-Fi extrêmement lent, qui rendait le travail quotidien difficile ;</li>
+          <li>sur les quatre bornes déployées, une seule ne fonctionnait plus : la borne « AC LR Bur S.REA » restait adoptée par le contrôleur mais ne servait plus aucun client.</li>
+        </ul>
+        <p><strong>Diagnostic.</strong> En analysant la configuration, j’ai constaté que tous les paramètres radio des bornes étaient en mode automatique (canal et puissance d’émission). Le contrôleur pouvait donc modifier ces réglages à tout moment, sans maîtrise du recouvrement entre les bornes.</p>
+      </section>
+      <section class="proj-sec" id="solution">
+        <h2><span class="proj-num">03</span>Solution et mise en œuvre</h2>
+        <ol class="steps"><li><strong>Remise en service de la borne inactive</strong><p>Redémarrage de la borne depuis la UniFi Network Application. Le redémarrage réinitialise les radios et les services de l’équipement, puis le contrôleur lui réapplique sa configuration. La borne a recommencé à accepter des clients.</p></li><li><strong>Bande 2,4 GHz : puissance d’émission réduite</strong><p>Passage de la puissance de « Auto » à « Low ». Cette bande porte loin et provoque du recouvrement entre les bornes ; la réduire limite les interférences et incite les appareils à se connecter en 5 GHz, plus rapide.</p></li><li><strong>Bande 5 GHz : puissance d’émission maîtrisée</strong><p>Passage de la puissance de « Auto » à « Medium » afin que les zones de couverture des quatre bornes ne se chevauchent pas excessivement.</p></li><li><strong>Bande 5 GHz : canal fixe sur chaque borne</strong><p>Remplacement de la sélection automatique du canal par un canal fixe sur chacune des quatre bornes, en conservant la largeur de 40 MHz déjà configurée. Les quatre canaux occupent des blocs distincts : aucun chevauchement n’est possible et le contrôleur ne peut plus placer deux bornes sur le même canal.</p></li></ol><div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Borne</th><th>Canal 5 GHz</th><th>Bloc occupé (40 MHz)</th></tr></thead>
+          <tbody>
+            <tr><td>AC LR Cafete</td><td>40</td><td>36 + 40</td></tr>
+            <tr><td>AC LR Bisca</td><td>44</td><td>44 + 48</td></tr>
+            <tr><td>AC LR Bur S.REA</td><td>100</td><td>100 + 104</td></tr>
+            <tr><td>AC SHD Marketing</td><td>108</td><td>108 + 112</td></tr>
+          </tbody></table></div>
+      </section>
+      <section class="proj-sec" id="resultats">
+        <h2><span class="proj-num">04</span>Tests et résultats</h2>
+        <div class="kpis"><div class="kpi"><span class="kpi-val">× 8</span><span class="kpi-lbl">débit descendant</span></div><div class="kpi"><span class="kpi-val">× 6</span><span class="kpi-lbl">débit montant</span></div><div class="kpi"><span class="kpi-val">86 → 41 ms</span><span class="kpi-lbl">latence en téléchargement</span></div><div class="kpi"><span class="kpi-val">0 → 10</span><span class="kpi-lbl">clients sur la borne remise en service</span></div></div>
+        <p><strong>Méthode de test.</strong> Les mesures ont été réalisées avec trois appareils différents (un ordinateur ancien, un ordinateur récent et un smartphone) afin d’éliminer l’influence de la carte Wi-Fi d’un appareil en particulier. Un suivi a ensuite été maintenu pendant une semaine pour vérifier la stabilité des débits.</p>
+        <p><strong>Résultat.</strong> Le débit est passé de 24,41 à 193,82 Mbps en téléchargement et de 24,68 à 150,51 Mbps en téléversement, ce qui a résolu durablement le problème signalé par les utilisateurs.</p><div class="compare "><div class="compare-col"><span class="compare-tag is-before">Avant</span><figure class="shot "><a href="images/e5/wifi-avant-speedtest.png" data-lightbox><img src="images/e5/wifi-avant-speedtest.png" alt="Speedtest avant intervention : 24,41 / 24,68 Mbps" loading="lazy"></a><figcaption>Speedtest avant intervention : 24,41 / 24,68 Mbps</figcaption></figure></div><div class="compare-col"><span class="compare-tag is-after">Après</span><figure class="shot "><a href="images/e5/wifi-apres-speedtest.png" data-lightbox><img src="images/e5/wifi-apres-speedtest.png" alt="Speedtest après intervention : 193,82 / 150,51 Mbps" loading="lazy"></a><figcaption>Speedtest après intervention : 193,82 / 150,51 Mbps</figcaption></figure></div></div>
+      </section>
+      <section class="proj-sec" id="limites">
+        <h2><span class="proj-num">05</span>Limites et perspectives</h2>
+        <ul class="check-list is-arrow">
+          <li>Les bornes AC LR sont limitées au Wi-Fi 5 (802.11ac) : avec des canaux de 40 MHz et un appareil à deux antennes, le débit théorique plafonne autour de 400 Mbps, soit en pratique environ la moitié. Malgré la fibre, ce sont les bornes qui limitent le débit.</li>
+          <li>Les canaux 100 et 108 sont des canaux DFS : en cas de détection d’un radar, la borne doit changer temporairement de canal.</li>
+          <li>Perspective : remplacer les bornes par des modèles Wi-Fi 6 ou 6E compatibles avec le contrôleur actuel, pour augmenter le débit et mieux gérer le nombre d’appareils connectés.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="competences">
+        <h2><span class="proj-num">06</span>Compétences mobilisées</h2>
+        <ul class="comp-list"><li><strong>Répondre aux incidents et aux demandes d’assistance et d’évolution</strong><span>Prise en charge des signalements des utilisateurs, diagnostic de la borne inactive et des réglages radio, résolution et vérification.</span></li><li><strong>Mettre à disposition des utilisateurs un service informatique</strong><span>Rétablissement d’un service Wi-Fi performant et stable pour l’ensemble des collaborateurs.</span></li></ul>
+      </section>
+      <section class="proj-sec" id="preuves">
+        <h2><span class="proj-num">07</span>Preuves</h2>
+        <div class="compare is-stacked"><div class="compare-col"><span class="compare-tag is-before">Avant</span><figure class="shot "><a href="images/e5/wifi-avant-ap.png" data-lightbox><img src="images/e5/wifi-avant-ap.png" alt="Bornes avant : « AC LR Bur S.REA » sans client" loading="lazy"></a><figcaption>Bornes avant : « AC LR Bur S.REA » sans client</figcaption></figure></div><div class="compare-col"><span class="compare-tag is-after">Après</span><figure class="shot "><a href="images/e5/wifi-apres-ap.png" data-lightbox><img src="images/e5/wifi-apres-ap.png" alt="Bornes après : les quatre bornes servent des clients" loading="lazy"></a><figcaption>Bornes après : les quatre bornes servent des clients</figcaption></figure></div></div><div class="compare "><div class="compare-col"><span class="compare-tag is-before">Avant</span><figure class="shot "><a href="images/e5/wifi-avant-config.png" data-lightbox><img src="images/e5/wifi-avant-config.png" alt="Configuration radio avant : canal et puissance en automatique" loading="lazy"></a><figcaption>Configuration radio avant : canal et puissance en automatique</figcaption></figure></div><div class="compare-col"><span class="compare-tag is-after">Après</span><figure class="shot "><a href="images/e5/wifi-apres-config.png" data-lightbox><img src="images/e5/wifi-apres-config.png" alt="Configuration radio après : puissance Low / Medium, canal 108 fixe" loading="lazy"></a><figcaption>Configuration radio après : puissance Low / Medium, canal 108 fixe</figcaption></figure></div></div>
+      </section>
+    </article>
+    <aside class="proj-aside">
+      <div class="aside-card">
+        <h3>Fiche projet</h3>
+        <dl class="aside-facts"><dt>Type</dt><dd>Réalisation en milieu professionnel</dd><dt>Entreprise</dt><dd>Bobochic Paris</dd><dt>Période</dt><dd>Mars 2026</dd><dt>Matériel</dt><dd>4 bornes Ubiquiti UniFi AC LR (Wi-Fi 5)</dd><dt>Contrôleur</dt><dd>UniFi Network Application (Docker sur NAS)</dd><dt>Outils</dt><dd>Speedtest by Ookla</dd></dl>
+        <h4>Compétences</h4>
+        <ul class="tags tags-col"><li class="t-orange">Répondre aux incidents et aux demandes d’assistance et d’évolution</li><li class="t-green">Mettre à disposition des utilisateurs un service informatique</li></ul>
+        
+      </div>
+      <nav class="aside-toc" aria-label="Sommaire"><h4>Sommaire</h4><ol><li><a href="#contexte">Contexte</a></li><li><a href="#besoin">Expression du besoin</a></li><li><a href="#solution">Solution et mise en œuvre</a></li><li><a href="#resultats">Tests et résultats</a></li><li><a href="#limites">Limites et perspectives</a></li><li><a href="#competences">Compétences mobilisées</a></li><li><a href="#preuves">Preuves</a></li></ol></nav>
+    </aside>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap"><nav class="proj-pager" aria-label="Autres réalisations"><a class="pager-prev" href="projet-inventaire.html"><small>← Réalisation précédente</small><strong>Inventaire et étiquetage QR du parc</strong></a><a class="pager-back" href="e5.html#professionnel">Toutes les réalisations</a><a class="pager-next" href="projet-archivage.html"><small>Réalisation suivante →</small><strong>Archivage de la messagerie d’un collaborateur sortant</strong></a></nav></div>
+</section>
+</main>
+<footer class="site-footer"><p>&copy; Diego Castillo – Portfolio BTS SIO 2027</p><p><a href="https://www.linkedin.com/in/diego-alberto-castillo-dc1997/" target="_blank" rel="noopener">LinkedIn</a></p></footer>
+<a class="totop" href="#top" aria-label="Retour en haut">↑</a>
+<script src="script.js"></script>
+</body>
+</html>

@@ -20,29 +20,103 @@
 </ul>
 </nav>
 </header>
-<div class="page-head"><h1>Épreuve E5</h1><p>Réalisations professionnelles menées en formation</p></div>
+<div class="page-head"><h1>Épreuve E5</h1><p>Mes réalisations professionnelles et mon tableau de synthèse</p></div>
 <main>
 <section class="section">
+  <div class="wrap synth">
+    <div class="synth-text">
+      <span class="eyebrow">Tableau de synthèse</span>
+      <h2 class="ent-title">Vue d’ensemble de mes réalisations</h2>
+      <p>Le tableau de synthèse recense l’ensemble de mes réalisations et les compétences du référentiel du BTS SIO qu’elles mobilisent. Il sert de point d’entrée pour parcourir les projets présentés sur cette page.</p>
+      <p>Chaque réalisation dispose d’une page détaillée qui suit la même démarche : contexte, expression du besoin, solution mise en œuvre, tests et résultats, compétences mobilisées et preuves.</p>
+      <!-- Quand le PDF sera prêt : déposer Documents/tableau-de-synthese-e5.pdf,
+           remplacer le <span> désactivé ci-dessous par :
+           <a class="btn-blue" href="Documents/tableau-de-synthese-e5.pdf" download>Télécharger le tableau</a> -->
+      <span class="btn-blue is-disabled" aria-disabled="true">Télécharger le tableau – bientôt disponible</span>
+    </div>
+    <div class="synth-preview">
+      <!-- Quand le PDF sera prêt, remplacer ce bloc par :
+           <iframe class="synth-frame" src="Documents/tableau-de-synthese-e5.pdf#toolbar=0" title="Aperçu du tableau de synthèse E5"></iframe> -->
+      <div class="synth-placeholder">
+        <span class="synth-icon" aria-hidden="true">▦</span>
+        <strong>Aperçu du tableau de synthèse</strong>
+        <span>Document en cours de finalisation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="professionnel">
   <div class="wrap">
-    <div class="actions"><a class="btn-blue" href="documents/tableau-de-synthese-e5.pdf">Tableau de synthèse E5</a></div>
-    <div class="cards">
-      <article class="card proj">
-        <h3>Redondance de passerelle HSRP</h3>
-        <p>Configuration de deux routeurs en HSRP avec deux switchs, deux postes et un serveur, sous Packet Tracer.</p>
-        <ul class="tags"><li>Cisco</li><li class="t-green">HSRP</li><li class="t-orange">Packet Tracer</li></ul>
-        <a class="btn-blue" href="documents/hsrp.pdf">Voir le dossier</a>
+    <h2>Réalisations en milieu professionnel</h2>
+    <p class="lead">Projets menés chez Bobochic Paris dans le cadre de mon alternance</p>
+    <div class="e5-grid">
+      <article class="e5-card">
+        <a class="e5-thumb" href="projet-onboarding.html" tabindex="-1" aria-hidden="true"><img src="images/e5/thumb-onboarding.jpg" alt="" loading="lazy"><span class="e5-badge">Octobre 2025</span></a>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation 01</span>
+          <h3><a href="projet-onboarding.html">Processus d’onboarding et d’offboarding</a></h3>
+          <p>Création des fiches de remise et de restitution du matériel pour structurer l’arrivée et le départ des collaborateurs.</p>
+          <ul class="tags"><li class="">Patrimoine informatique</li><li class="t-green">Service aux utilisateurs</li><li class="">Mode projet</li></ul>
+          <a class="e5-link" href="projet-onboarding.html">Voir la réalisation <span aria-hidden="true">→</span></a>
+        </div>
       </article>
-      <article class="card proj">
-        <h3>Routage inter-VLAN sur deux routeurs</h3>
-        <p>Mise en place de VLAN puis d’un lien routé entre deux routeurs, simulée sous Packet Tracer puis réalisée sur du matériel physique.</p>
-        <ul class="tags"><li class="t-green">VLAN</li><li>Routage</li><li>Cisco</li></ul>
-        <a class="btn-blue" href="documents/inter-vlan.pdf">Voir le dossier</a>
+      <article class="e5-card">
+        <a class="e5-thumb" href="projet-inventaire.html" tabindex="-1" aria-hidden="true"><img src="images/e5/thumb-inventaire.jpg" alt="" loading="lazy"><span class="e5-badge">Oct. – nov. 2025</span></a>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation 02</span>
+          <h3><a href="projet-inventaire.html">Inventaire et étiquetage QR du parc</a></h3>
+          <p>Remise à jour de l’inventaire de 249 équipements sur quatre sites et mise en place d’étiquettes QR.</p>
+          <ul class="tags"><li class="">Patrimoine informatique</li><li class="">Mode projet</li></ul>
+          <a class="e5-link" href="projet-inventaire.html">Voir la réalisation <span aria-hidden="true">→</span></a>
+        </div>
       </article>
-      <article class="card proj">
-        <h3>Réseau multicouche avec VLAN</h3>
-        <p>Segmentation en plusieurs VLAN avec switchs multicouches, routeur et point d’accès Wi-Fi.</p>
-        <ul class="tags"><li class="t-green">VLAN</li><li>Switch L3</li><li class="t-orange">Wi-Fi</li></ul>
-        <a class="btn-blue" href="documents/vlan-multicouche.pdf">Voir le dossier</a>
+      <article class="e5-card">
+        <a class="e5-thumb" href="projet-wifi.html" tabindex="-1" aria-hidden="true"><img src="images/e5/thumb-wifi.jpg" alt="" loading="lazy"><span class="e5-badge">Mars 2026</span></a>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation 03</span>
+          <h3><a href="projet-wifi.html">Optimisation du réseau Wi-Fi</a></h3>
+          <p>Diagnostic et reconfiguration de quatre bornes Ubiquiti UniFi : débit descendant multiplié par huit.</p>
+          <ul class="tags"><li class="t-orange">Incidents et assistance</li><li class="t-green">Service aux utilisateurs</li></ul>
+          <a class="e5-link" href="projet-wifi.html">Voir la réalisation <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="e5-card">
+        <a class="e5-thumb" href="projet-archivage.html" tabindex="-1" aria-hidden="true"><img src="images/e5/thumb-archivage.jpg" alt="" loading="lazy"><span class="e5-badge">Oct. – nov. 2026</span></a>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation 04</span>
+          <h3><a href="projet-archivage.html">Archivage de la messagerie d’un collaborateur sortant</a></h3>
+          <p>Procédure de sauvegarde d’une boîte Gmail avec Google Takeout et consultation avec Thunderbird, conforme au RGPD.</p>
+          <ul class="tags"><li class="">Patrimoine informatique</li><li class="t-orange">Incidents et assistance</li><li class="">Mode projet</li></ul>
+          <a class="e5-link" href="projet-archivage.html">Voir la réalisation <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="formation">
+  <div class="wrap">
+    <h2>Réalisations en cours de formation</h2>
+    <p class="lead">Projets réalisés à l’école PSTB</p>
+    <div class="empty">Les réalisations en cours de formation seront ajoutées prochainement.</div>
+  </div>
+</section>
+
+<section class="section alt" id="personnel">
+  <div class="wrap">
+    <h2>Projets personnels</h2>
+    <p class="lead">Projets menés en dehors de l’entreprise et de l’école</p>
+    <div class="e5-grid e5-grid-solo">
+      <article class="e5-card is-upcoming">
+        <div class="e5-thumb e5-thumb-lab" aria-hidden="true"><span>Proxmox · pfSense</span><span class="e5-badge">En cours</span></div>
+        <div class="e5-card-body">
+          <span class="e5-num">Projet personnel</span>
+          <h3>Laboratoire personnel Proxmox et pfSense</h3>
+          <p>Mise en place d’un laboratoire de virtualisation sur un serveur Proxmox dédié, associé à un pare-feu pfSense, pour tester des infrastructures en conditions réelles.</p>
+          <ul class="tags"><li>Virtualisation</li><li class="t-green">Pare-feu</li><li class="t-orange">Réseau</li></ul>
+          <span class="e5-link is-muted">Page en préparation</span>
+        </div>
       </article>
     </div>
   </div>

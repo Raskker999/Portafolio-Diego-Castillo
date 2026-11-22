@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archivage de la messagerie d’un collaborateur sortant – Portfolio BTS SIO 2027</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<header class="site-header">
+<nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="index.html">Portfolio BTS SIO <span>2027</span></a>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="entreprise.html">Entreprise</a></li>
+<li><a href="e5.html" aria-current="page">Épreuve E5</a></li>
+<li><a href="e6.html">Épreuve E6</a></li>
+<li><a href="veille.html">Veille technologique</a></li>
+</ul>
+</nav>
+</header>
+<div class="proj-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="e5.html">Épreuve E5</a> <span aria-hidden="true">›</span> <a href="e5.html#professionnel">Réalisations professionnelles</a></nav>
+    <span class="proj-kicker">Réalisation 04 · Oct. – nov. 2026</span>
+    <h1>Archivage de la messagerie d’un collaborateur sortant</h1>
+    <p>Procédure de sauvegarde d’une boîte Gmail (Google Workspace) avant la suppression du compte d’un collaborateur, avec Google Takeout et consultation de l’archive dans Mozilla Thunderbird.</p>
+  </div>
+</div>
+<main>
+<section class="section">
+  <div class="wrap proj-layout">
+    <article class="proj-body">
+      <section class="proj-sec" id="contexte">
+        <h2><span class="proj-num">01</span>Contexte</h2>
+        <p>Lorsqu’un collaborateur quitte l’entreprise, son compte Google Workspace doit être supprimé pour libérer la licence et sécuriser l’accès aux données. Or la messagerie Gmail ne fait pas partie des données transférables lors de la suppression d’un compte, contrairement à Drive ou à Agenda : les messages doivent donc être sauvegardés avant.</p>
+        <p>L’entreprise utilise l’édition Business Standard, qui n’inclut pas Google Vault. En tant que super administrateur du domaine, je suis chargé de cette opération.</p>
+      </section>
+      <section class="proj-sec" id="besoin">
+        <h2><span class="proj-num">02</span>Expression du besoin</h2>
+        <ul class="check-list">
+          <li>obtenir une copie complète de la boîte : messages, pièces jointes et libellés ;</li>
+          <li>pouvoir consulter cette copie plus tard, sans compte Google ni licence ;</li>
+          <li>utiliser un format ouvert, sans licence supplémentaire ni accès délégué à un outil tiers ;</li>
+          <li>conserver l’archive en trois exemplaires : disque dur externe, NAS et Google Drive de l’entreprise ;</li>
+          <li>disposer d’une procédure documentée, reproductible par un autre technicien.</li>
+        </ul>
+        <p>J’ai comparé cinq solutions avant de retenir la méthode décrite :</p><div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Solution</th><th>Principal argument</th><th>Décision</th></tr></thead>
+          <tbody>
+            <tr><td>Google Vault</td><td>Non inclus dans l’édition Business Standard (module payant)</td><td><span class="pill is-no">Non retenue</span></td></tr>
+            <tr class="is-chosen"><td>Google Takeout</td><td>Outil officiel et gratuit, aucun accès supplémentaire, format MBOX ouvert</td><td><span class="pill is-yes">Retenue</span></td></tr>
+            <tr><td>GYB (Got Your Back)</td><td>Clé de compte de service donnant un accès étendu à tout le domaine</td><td><span class="pill is-no">Non retenue</span></td></tr>
+            <tr><td>Sauvegarde tierce</td><td>Coût mensuel et données confiées à un tiers</td><td><span class="pill is-no">Non retenue</span></td></tr>
+            <tr><td>Licence Archived User</td><td>Coût par utilisateur, ne permet pas de supprimer le compte</td><td><span class="pill is-no">Non retenue</span></td></tr>
+          </tbody></table></div>
+      </section>
+      <section class="proj-sec" id="solution">
+        <h2><span class="proj-num">03</span>Solution et mise en œuvre</h2>
+        <p>Google Takeout produit un fichier MBOX, format ouvert que Mozilla Thunderbird, logiciel gratuit et open source, lit nativement. La procédure se déroule en sept étapes :</p><ol class="steps"><li><strong>A – Accéder à la boîte du collaborateur</strong><p>Depuis la console d’administration, réinitialisation du mot de passe du compte, puis connexion en navigation privée pour ne pas mélanger les sessions.</p></li><li><strong>B – Exporter la messagerie avec Google Takeout</strong><p>Sélection du seul service « Messagerie », tous les messages inclus, export unique au format ZIP de 10 Go avec lien de téléchargement par e-mail.</p></li><li><strong>C – Télécharger et extraire l’archive</strong><p>Extraction du fichier MBOX, avec 7-Zip ou WinRAR pour les archives de plus de 2 Go (format zip64).</p></li><li><strong>D – Préparer Thunderbird</strong><p>Création d’un compte de flux, utilisé comme conteneur local pour accueillir l’archive.</p></li><li><strong>E – Importer le fichier MBOX</strong><p>Copie du fichier dans le dossier du compte, renommé sans extension, puis redémarrage de Thunderbird.</p></li><li><strong>F – Retrouver les messages par libellé (facultatif)</strong><p>Création de dossiers virtuels à partir de l’en-tête X-Gmail-Labels écrit par Takeout.</p></li><li><strong>G – Vérifier et conserver la copie</strong><p>Contrôle du nombre de messages, réalisation des trois copies et contrôle de leur taille. Le compte n’est supprimé qu’après ces vérifications.</p></li></ol>
+      </section>
+      <section class="proj-sec" id="resultats">
+        <h2><span class="proj-num">04</span>Tests et résultats</h2>
+        <div class="kpis"><div class="kpi"><span class="kpi-val">52 / 52</span><span class="kpi-lbl">messages retrouvés après import</span></div><div class="kpi"><span class="kpi-val">7</span><span class="kpi-lbl">incidents diagnostiqués et documentés</span></div><div class="kpi"><span class="kpi-val">0 €</span><span class="kpi-lbl">de licence supplémentaire</span></div><div class="kpi"><span class="kpi-val">3</span><span class="kpi-lbl">copies contrôlées</span></div></div>
+        <p><strong>Tests.</strong> La procédure a été testée de bout en bout sur un compte de test sans activité réelle, afin qu’aucune donnée personnelle n’apparaisse dans la documentation. Le nombre de messages affiché dans Thunderbird correspond à celui de la boîte d’origine.</p>
+        <p><strong>Incidents résolus.</strong> Sept difficultés ont été rencontrées et documentées avec leur symptôme, leur cause et leur solution, par exemple :</p>
+        <ul class="check-list is-arrow">
+          <li>téléchargement bloqué par une vérification d’identité de Google : désactivation temporaire du défi de connexion depuis la console d’administration ;</li>
+          <li>aucune option d’import MBOX sur le compte de flux : copie directe du fichier dans le dossier du compte ;</li>
+          <li>recherche par libellé sans résultat : Takeout écrit les libellés dans la langue du compte, il faut utiliser leur orthographe exacte.</li>
+        </ul>
+        <p><strong>Protection des données.</strong> La procédure est limitée aux collaborateurs ayant quitté l’entreprise, sur demande validée par la direction ou les ressources humaines. Elle prévoit une durée de conservation limitée, le chiffrement des copies, la journalisation des accès et la destruction des archives à l’échéance. Ce chapitre a été relu par la DPO de l’entreprise.</p><div class="gallery g2"><figure class="shot "><a href="images/e5/archivage-takeout.png" data-lightbox><img src="images/e5/archivage-takeout.png" alt="Google Takeout : sélection du service « Messagerie » (compte de test)" loading="lazy"></a><figcaption>Google Takeout : sélection du service « Messagerie » (compte de test)</figcaption></figure><figure class="shot "><a href="images/e5/archivage-thunderbird.png" data-lightbox><img src="images/e5/archivage-thunderbird.png" alt="Thunderbird : dossier d’archive affiché sous le compte de flux" loading="lazy"></a><figcaption>Thunderbird : dossier d’archive affiché sous le compte de flux</figcaption></figure></div>
+      </section>
+      <section class="proj-sec" id="limites">
+        <h2><span class="proj-num">05</span>Limites et perspectives</h2>
+        <ul class="check-list is-arrow">
+          <li>L’accès à la boîte impose de réinitialiser le mot de passe du collaborateur, acceptable uniquement pour un compte voué à la suppression.</li>
+          <li>La procédure est manuelle et adaptée à un usage ponctuel.</li>
+          <li>Perspectives : tester la restauration d’une archive depuis un autre poste et évaluer GYB si le nombre de comptes à archiver devient important.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="competences">
+        <h2><span class="proj-num">06</span>Compétences mobilisées</h2>
+        <ul class="comp-list"><li><strong>Gérer le patrimoine informatique</strong><span>Sauvegarde des données de l’entreprise, choix d’un format ouvert et règle de conservation en trois exemplaires.</span></li><li><strong>Répondre aux incidents et aux demandes d’assistance et d’évolution</strong><span>Diagnostic et résolution de sept incidents rencontrés lors de la mise au point de la procédure.</span></li><li><strong>Travailler en mode projet</strong><span>Étude comparative de cinq solutions, justification du choix, rédaction d’une documentation validée.</span></li></ul>
+      </section>
+      <section class="proj-sec" id="preuves">
+        <h2><span class="proj-num">07</span>Preuves</h2>
+        <div class="doc-preview">
+          <div><strong>Documentation technique – Archivage de la messagerie</strong><span>42 pages · version 1.1 · captures réalisées sur un compte de test</span></div>
+          <a class="btn-blue" href="Documents/archivage-messagerie.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+        </div>
+      </section>
+    </article>
+    <aside class="proj-aside">
+      <div class="aside-card">
+        <h3>Fiche projet</h3>
+        <dl class="aside-facts"><dt>Type</dt><dd>Réalisation en milieu professionnel</dd><dt>Entreprise</dt><dd>Bobochic Paris</dd><dt>Période</dt><dd>Octobre – novembre 2026</dd><dt>Environnement</dt><dd>Google Workspace Business Standard, Windows, Mozilla Thunderbird</dd><dt>Livrable</dt><dd>Documentation technique de 42 pages (v1.1)</dd><dt>Validation</dt><dd>Chapitre RGPD relu par la DPO</dd></dl>
+        <h4>Compétences</h4>
+        <ul class="tags tags-col"><li class="">Gérer le patrimoine informatique</li><li class="t-orange">Répondre aux incidents et aux demandes d’assistance et d’évolution</li><li class="">Travailler en mode projet</li></ul>
+        <h4>Documents</h4><a class="doc-btn" href="Documents/archivage-messagerie.pdf" target="_blank" rel="noopener"><span aria-hidden="true">PDF</span>Documentation technique complète</a>
+      </div>
+      <nav class="aside-toc" aria-label="Sommaire"><h4>Sommaire</h4><ol><li><a href="#contexte">Contexte</a></li><li><a href="#besoin">Expression du besoin</a></li><li><a href="#solution">Solution et mise en œuvre</a></li><li><a href="#resultats">Tests et résultats</a></li><li><a href="#limites">Limites et perspectives</a></li><li><a href="#competences">Compétences mobilisées</a></li><li><a href="#preuves">Preuves</a></li></ol></nav>
+    </aside>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap"><nav class="proj-pager" aria-label="Autres réalisations"><a class="pager-prev" href="projet-wifi.html"><small>← Réalisation précédente</small><strong>Optimisation du réseau Wi-Fi</strong></a><a class="pager-back" href="e5.html#professionnel">Toutes les réalisations</a><span></span></nav></div>
+</section>
+</main>
+<footer class="site-footer"><p>&copy; Diego Castillo – Portfolio BTS SIO 2027</p><p><a href="https://www.linkedin.com/in/diego-alberto-castillo-dc1997/" target="_blank" rel="noopener">LinkedIn</a></p></footer>
+<a class="totop" href="#top" aria-label="Retour en haut">↑</a>
+<script src="script.js"></script>
+</body>
+</html>
