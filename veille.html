@@ -20,18 +20,246 @@
 </ul>
 </nav>
 </header>
-<div class="page-head"><h1>Veille technologique</h1><p>Suivre l’actualité pour rester à jour</p></div>
+<div class="page-head"><h1>Veille technologique</h1><p>L’IA générative au service des arnaques : les personnes âgées en première ligne</p></div>
 <main>
+
+<!-- 1. Sujet -->
 <section class="section">
   <div class="wrap">
-    <div class="card green">
-      <dl class="fiche">
-        <dt>Thème</dt><dd>[Thème de ma veille]</dd>
-        <dt>Sources</dt><dd>[Sites, flux RSS, newsletters suivis]</dd>
-        <dt>Outils</dt><dd>[Outils de collecte et d’automatisation]</dd>
-        <dt>Ce que j’en retiens</dt><dd>[Synthèse de ce que la veille m’a appris]</dd>
-      </dl>
+    <div class="veille-intro">
+      <div>
+        <span class="eyebrow">Sujet de veille</span>
+        <h2 class="ent-title">Les personnes âgées face aux arnaques assistées par IA</h2>
+        <p>Voix d’un petit-enfant clonée au téléphone, faux conseiller bancaire, fausse célébrité qui déclare sa flamme en vidéo : l’intelligence artificielle générative rend les escroqueries plus crédibles et plus faciles à produire en masse. Tout le monde peut en être la cible, mais les personnes âgées sont en première ligne : aux États-Unis, elles ne représentent qu’environ 14 % des plaintes liées à l’IA, mais près de 40 % des pertes.</p>
+        <p>En parallèle, les législateurs adoptent des textes pour encadrer ces usages, à un rythme bien plus lent que celui des progrès techniques. Cette veille suit ces trois dimensions : les techniques, leurs victimes et la réponse du droit.</p>
+      </div>
+      <aside class="problem-box">
+        <span class="problem-label">Problématique</span>
+        <p>Comment l’IA générative rend-elle les arnaques visant les personnes âgées plus crédibles et plus rentables, et pourquoi le droit peine-t-il à suivre ?</p>
+        <span class="problem-label">Lien avec l’option SISR</span>
+        <p class="problem-small">Ingénierie sociale, cybersécurité, protection des données et sensibilisation des utilisateurs : des enjeux au cœur du métier d’administrateur systèmes et réseaux, qui accompagne au quotidien des utilisateurs aux profils très variés.</p>
+      </aside>
     </div>
+    <div class="axes">
+      <div class="axe"><span class="axe-num">1</span><h3>Les techniques</h3><p>Clonage vocal, deepfakes, échange de visage en temps réel et automatisation des appels, appliqués aux arnaques visant les seniors.</p></div>
+      <div class="axe"><span class="axe-num">2</span><h3>Les victimes</h3><p>Pourquoi les personnes âgées sont particulièrement ciblées, montants en jeu et évolution des signalements.</p></div>
+      <div class="axe"><span class="axe-num">3</span><h3>Le droit et la prévention</h3><p>Réponses légales selon les régions, décalage avec l’innovation et bons réflexes pour se protéger.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Chiffres -->
+<section class="section alt" id="chiffres">
+  <div class="wrap">
+    <h2>Les personnes âgées en première ligne</h2>
+    <p class="lead">Premiers repères chiffrés, relevés en novembre 2026 et à actualiser au fil de la veille</p>
+    <div class="share-row">
+      <div class="share-card">
+        <div class="share-ring" style="--p:14"><span>≈ 14 %</span></div>
+        <p><strong>des plaintes</strong> liées à l’IA déposées auprès du FBI en 2025 proviennent de personnes de plus de 60 ans (plus de 3 100 sur 22 364)</p>
+      </div>
+      <div class="share-vs" aria-hidden="true">mais</div>
+      <div class="share-card is-strong">
+        <div class="share-ring" style="--p:39"><span>≈ 39 %</span></div>
+        <p><strong>des pertes</strong> liées à l’IA les concernent : 352 M$ sur 893 M$ déclarés aux États-Unis en 2025</p>
+      </div>
+    </div>
+    <p class="share-note">Pourcentages calculés à partir des données du rapport 2025 du FBI (IC3). Aucune répartition officielle par âge des arnaques liées à l’IA n’a encore été trouvée pour la France : c’est l’un des points suivis par cette veille.</p>
+    <div class="kpis veille-kpis">
+      <div class="kpi"><span class="kpi-val">≈ 38 500 $</span><span class="kpi-lbl">de perte moyenne par victime de plus de 60 ans aux États-Unis en 2025, près du double des plus jeunes (FBI)</span></div>
+      <div class="kpi"><span class="kpi-val">7,7 Md$</span><span class="kpi-lbl">de pertes déclarées par les plus de 60 ans aux États-Unis en 2025, toutes arnaques confondues (FBI)</span></div>
+      <div class="kpi"><span class="kpi-val">+ 5 M$</span><span class="kpi-lbl">de pertes dues aux arnaques de « détresse » (faux proche en difficulté) aux États-Unis en 2025 (FBI)</span></div>
+      <div class="kpi"><span class="kpi-val">+ 159 %</span><span class="kpi-lbl">de fraudes au faux conseiller bancaire en France en 2025 (Cybermalveillance.gouv.fr)</span></div>
+      <div class="kpi"><span class="kpi-val">+ 517 %</span><span class="kpi-lbl">d’usurpations de numéro de téléphone en France en 2025 (Cybermalveillance.gouv.fr)</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Pourquoi -->
+<section class="section" id="pourquoi">
+  <div class="wrap">
+    <h2>Pourquoi les personnes âgées sont particulièrement ciblées</h2>
+    <p class="lead">Les facteurs qui rendent ce public plus exposé et les arnaques plus rentables</p>
+    <div class="why-grid">
+      <div class="why-item"><h3>Une épargne plus importante</h3><p>Les montants en jeu sont plus élevés : selon la FTC, les pertes de plus de 100 000 $ ne représentent que 6 % des signalements des seniors, mais 70 % des sommes perdues.</p></div>
+      <div class="why-item"><h3>Une moindre familiarité avec l’IA</h3><p>Savoir qu’une voix ou une vidéo peut être générée en quelques secondes n’est pas encore un réflexe : une voix familière suffit souvent à lever les doutes.</p></div>
+      <div class="why-item"><h3>La confiance dans le téléphone et les institutions</h3><p>Les appels d’une banque, d’un organisme public ou d’un proche sont traditionnellement perçus comme fiables, ce que l’usurpation de numéro exploite directement.</p></div>
+      <div class="why-item"><h3>L’isolement et l’affect</h3><p>Les scénarios jouent sur l’urgence et les émotions (un petit-enfant en danger, une relation amoureuse) pour empêcher la victime de prendre du recul ou d’en parler.</p></div>
+      <div class="why-item"><h3>La honte et la sous-déclaration</h3><p>Beaucoup de victimes n’osent pas signaler l’arnaque : les chiffres officiels sous-estiment probablement l’ampleur réelle du phénomène.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Arnaques -->
+<section class="section alt" id="arnaques">
+  <div class="wrap">
+    <h2>Les arnaques assistées par IA qui visent les seniors</h2>
+    <p class="lead">Quatre scénarios rendus plus crédibles et plus massifs par l’IA générative</p>
+    <div class="scam-grid">
+      <article class="scam-card"><span class="scam-icon" aria-hidden="true">☎</span><h3>Le faux petit-enfant en détresse</h3><p>Quelques secondes d’une vidéo publiée en ligne suffisent pour cloner la voix d’un proche. L’escroc appelle en simulant une urgence (accident, arrestation) et réclame un virement immédiat.</p></article>
+      <article class="scam-card"><span class="scam-icon" aria-hidden="true">€</span><h3>Le faux conseiller bancaire</h3><p>Avec un numéro usurpé qui s’affiche comme celui de la banque, l’escroc alerte sur une fraude imaginaire pour obtenir les codes ou faire valider des opérations.</p></article>
+      <article class="scam-card"><span class="scam-icon" aria-hidden="true">★</span><h3>Fausses célébrités et arnaques sentimentales</h3><p>Photos, vidéos et appels vidéo avec échange de visage en temps réel rendent crédible une relation à distance avec une personnalité ou un inconnu, jusqu’aux demandes d’argent.</p></article>
+      <article class="scam-card"><span class="scam-icon" aria-hidden="true">⇄</span><h3>Appels et messages automatisés</h3><p>Robocalls, SMS et courriels générés et envoyés en masse permettent de toucher un très grand nombre de personnes pour un coût minime, puis de cibler celles qui répondent.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Évolution -->
+<section class="section" id="evolution">
+  <div class="wrap">
+    <h2>L’évolution de l’IA générative</h2>
+    <p class="lead">En une dizaine d’années, la technologie est passée du laboratoire aux outils grand public, puis aux mains des fraudeurs, tandis que les premières lois arrivaient plus tard.</p>
+    <ul class="tl-legend" aria-label="Légende">
+      <li><span class="tl-dot is-tech"></span>Technologie</li>
+      <li><span class="tl-dot is-scam"></span>Arnaque</li>
+      <li><span class="tl-dot is-law"></span>Loi</li>
+    </ul>
+    <ol class="timeline">
+      <li class="is-tech"><span class="tl-year">2014</span><div><strong>Naissance des GAN</strong><p>Les réseaux antagonistes génératifs (GAN), présentés par Ian Goodfellow et ses collègues, permettent pour la première fois de générer des images réalistes. Ils sont à l’origine des premiers deepfakes.</p></div></li>
+      <li class="is-tech"><span class="tl-year">2017</span><div><strong>Le terme « deepfake » et l’architecture Transformer</strong><p>Le mot « deepfake » apparaît sur Internet pour désigner des vidéos truquées par IA. La même année, des chercheurs de Google publient l’architecture Transformer, base des futurs modèles de langage.</p></div></li>
+      <li class="is-scam"><span class="tl-year">2019</span><div><strong>Première arnaque connue à la voix clonée</strong><p>Le dirigeant d’une entreprise britannique du secteur de l’énergie vire 220 000 € après un appel imitant la voix de son supérieur allemand, considéré comme le premier cas connu de ce type.</p></div></li>
+      <li class="is-tech"><span class="tl-year">2022</span><div><strong>L’IA générative devient grand public</strong><p>Les générateurs d’images (DALL·E 2, Midjourney, Stable Diffusion) se diffusent, puis OpenAI lance ChatGPT en novembre : n’importe qui peut désormais produire du texte et des images convaincants.</p></div></li>
+      <li class="is-tech"><span class="tl-year">Janv. 2023</span><div><strong>Trois secondes suffisent pour cloner une voix</strong><p>Microsoft présente VALL-E, un modèle capable de reproduire la voix d’une personne à partir d’un échantillon de trois secondes.</p></div></li>
+      <li class="is-scam"><span class="tl-year">Mars 2023</span><div><strong>Premières alertes officielles sur le faux proche à la voix clonée</strong><p>La FTC américaine avertit que les escrocs utilisent l’IA pour cloner la voix d’un membre de la famille à partir d’un court extrait audio publié en ligne.</p></div></li>
+      <li class="is-scam"><span class="tl-year">Janv. 2024</span><div><strong>Une visioconférence entièrement truquée</strong><p>Un employé du groupe Arup à Hong Kong transfère environ 25 millions de dollars après une réunion vidéo où tous les participants, dont le directeur financier, étaient des deepfakes.</p></div></li>
+      <li class="is-law"><span class="tl-year">Févr. 2024</span><div><strong>États-Unis : les voix IA encadrées dans les appels automatisés</strong><p>La FCC rattache les voix générées par IA aux règles sur les voix artificielles des appels automatisés (robocalls), rendant leur usage illégal sans consentement préalable.</p></div></li>
+      <li class="is-tech"><span class="tl-year">Févr. 2024</span><div><strong>Sora : la vidéo générée devient crédible</strong><p>OpenAI dévoile Sora, son modèle de génération vidéo, ouvert au public en décembre 2024.</p></div></li>
+      <li class="is-scam"><span class="tl-year">Avr. 2024</span><div><strong>L’échange de visage en direct dans les arnaques sentimentales</strong><p>Des escrocs utilisent des applications d’échange de visage pendant des appels vidéo pour apparaître sous une autre identité en temps réel.</p></div></li>
+      <li class="is-law"><span class="tl-year">Mai 2024</span><div><strong>France : la loi SREN crée un délit de deepfake</strong><p>Le Code pénal sanctionne désormais la diffusion de contenus générés par IA représentant une personne sans son consentement, avec des peines aggravées pour les deepfakes à caractère sexuel.</p></div></li>
+      <li class="is-law"><span class="tl-year">Août 2024</span><div><strong>Union européenne : entrée en vigueur de l’AI Act</strong><p>Le règlement européen sur l’IA entre en vigueur, avec une application progressive étalée sur plusieurs années.</p></div></li>
+      <li class="is-law"><span class="tl-year">Sept. 2024</span><div><strong>Corée du Sud : posséder ou regarder un deepfake sexuel devient un délit</strong><p>Le pays durcit sa loi après une vague de deepfakes sexuels diffusés sur des messageries.</p></div></li>
+      <li class="is-scam"><span class="tl-year">Janv. 2025</span><div><strong>Le « faux Brad Pitt »</strong><p>Une Française révèle avoir versé 830 000 € à des escrocs se faisant passer pour l’acteur, à l’aide de photos et de vidéos générées par IA.</p></div></li>
+      <li class="is-law"><span class="tl-year">Sept. 2025</span><div><strong>Chine : étiquetage obligatoire des contenus IA</strong><p>Les contenus générés par IA doivent porter une mention visible et un marquage invisible (métadonnées, filigrane).</p></div></li>
+      <li class="is-tech"><span class="tl-year">Sept. 2025</span><div><strong>Sora 2 : vidéo et son réalistes</strong><p>OpenAI lance Sora 2, plus réaliste et capable de générer le son, accompagné d’une application sociale pour partager les vidéos.</p></div></li>
+      <li class="is-law"><span class="tl-year">Août 2026</span><div><strong>Deux textes entrent en application</strong><p>Dans l’Union européenne, les obligations de transparence de l’AI Act (article 50) s’appliquent. En France, le démarchage téléphonique devient interdit sans consentement préalable.</p></div></li>
+    </ol>
+    <p class="tl-note">Les techniques utilisées par les fraudeurs (voix clonées dès 2019, deepfakes depuis 2017) ont précédé de plusieurs années les principaux textes de loi, adoptés entre 2024 et 2026.</p>
+  </div>
+</section>
+
+<!-- 5. Droit -->
+<section class="section alt" id="droit">
+  <div class="wrap">
+    <h2>Le droit face à l’IA : des réponses différentes selon les régions</h2>
+    <p class="lead">Chaque région avance à son rythme et cible des risques différents</p>
+    <div class="table-wrap">
+      <table class="data-table law-table">
+        <thead><tr><th>Région</th><th>Texte</th><th>Ce qu’il prévoit</th><th>Application</th></tr></thead>
+        <tbody>
+          <tr><td>Union européenne</td><td>AI Act (règlement 2024/1689)</td><td>Interdiction de certaines pratiques, obligations de transparence pour les contenus générés ou manipulés (article 50), règles renforcées pour les systèmes à haut risque.</td><td>Entrée en vigueur en août 2024 ; transparence en août 2026 ; haut risque reporté à décembre 2027</td></tr>
+          <tr><td>France</td><td>Loi SREN</td><td>Délit de diffusion d’un deepfake sans consentement ; deepfake à caractère sexuel puni jusqu’à deux ans d’emprisonnement et 60 000 € d’amende.</td><td>Mai 2024</td></tr>
+          <tr><td>France</td><td>Loi contre toutes les fraudes aux aides publiques</td><td>Démarchage téléphonique interdit sans consentement préalable du consommateur (fin du système Bloctel).</td><td>11 août 2026</td></tr>
+          <tr><td>États-Unis</td><td>Décision de la FCC</td><td>Les voix générées par IA sont considérées comme « artificielles » : leur usage dans les appels automatisés est illégal sans consentement préalable.</td><td>Février 2024</td></tr>
+          <tr><td>Corée du Sud</td><td>Loi sur les crimes sexuels</td><td>Production ou diffusion d’un deepfake sexuel punie jusqu’à sept ans d’emprisonnement ; possession ou visionnage jusqu’à trois ans.</td><td>Septembre 2024</td></tr>
+          <tr><td>Chine</td><td>Mesures d’étiquetage des contenus IA</td><td>Mention visible et marquage invisible obligatoires sur tout contenu généré par IA ; interdiction de supprimer ces étiquettes.</td><td>Septembre 2025</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="gap-box">
+      <strong>Un décalage révélateur</strong>
+      <p>Il a fallu environ sept ans entre l’apparition du terme « deepfake » (2017) et la création d’un délit spécifique en France (2024). Dans le même temps, l’Union européenne a repoussé à décembre 2027 l’application des règles sur les systèmes d’IA à haut risque, initialement prévue pour août 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Prévention -->
+<section class="section" id="prevention">
+  <div class="wrap">
+    <h2>Se protéger : les bons réflexes</h2>
+    <p class="lead">Des gestes simples à partager avec les personnes âgées et leur entourage</p>
+    <div class="tips">
+      <div class="tip"><strong>Convenir d’un mot de passe familial</strong><p>Un mot connu seulement de la famille, à demander en cas d’appel d’urgence : une voix clonée ne peut pas le connaître.</p></div>
+      <div class="tip"><strong>Raccrocher et rappeler</strong><p>Face à une demande urgente, raccrocher puis rappeler le proche ou la banque sur le numéro habituel, jamais sur celui fourni par l’appelant.</p></div>
+      <div class="tip"><strong>Ne jamais communiquer ses codes</strong><p>Aucune banque ni administration ne demande un code reçu par SMS, un mot de passe ou un numéro de carte par téléphone.</p></div>
+      <div class="tip"><strong>Tester l’interlocuteur en visio</strong><p>Demander un geste imprévu (tourner la tête, montrer un objet) : les échanges de visage en temps réel supportent mal les mouvements.</p></div>
+      <div class="tip"><strong>Limiter ce que l’on publie</strong><p>Les vidéos et messages vocaux publics fournissent la matière première du clonage vocal.</p></div>
+      <div class="tip"><strong>Signaler et se faire aider</strong><p>En cas de doute ou d’arnaque, en parler à un proche et consulter Cybermalveillance.gouv.fr pour être accompagné.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Stratégie -->
+<section class="section alt" id="strategie">
+  <div class="wrap">
+    <h2>Ma stratégie de veille</h2>
+    <p class="lead">Des sources variées, des outils de collecte et une méthode de traitement</p>
+
+    <h3 class="sub-title">Sources retenues</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Type</th><th>Sources</th><th>Langue</th></tr></thead>
+        <tbody>
+          <tr><td>Organismes officiels</td><td>Cybermalveillance.gouv.fr, ANSSI / CERT-FR, CNIL, FBI IC3</td><td>FR / EN</td></tr>
+          <tr><td>Presse spécialisée</td><td>Le Monde Informatique, LeMagIT, Next, BleepingComputer</td><td>FR / EN</td></tr>
+          <tr><td>Éditeurs de sécurité</td><td>Malwarebytes, Bitdefender, Trend Micro</td><td>FR / EN</td></tr>
+          <tr><td>Prévention et seniors</td><td>Pour-les-personnes-agees.gouv.fr, Banque de France, FTC</td><td>FR / EN</td></tr>
+          <tr><td>Sources juridiques</td><td>EUR-Lex, Légifrance, Service-Public.fr</td><td>FR</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-title">Outils</h3>
+    <div class="tool-grid">
+      <article class="tool-card"><span class="pill is-yes">Retenu</span><h4>Lecteur de flux RSS</h4><p>Regroupe les articles de toutes les sources au même endroit (Feedly ou Inoreader dans un premier temps, puis FreshRSS hébergé sur mon serveur à terme).</p></article>
+      <article class="tool-card"><span class="pill is-yes">Retenu</span><h4>Google Alertes</h4><p>Alertes sur des mots-clés ciblés : « arnaque seniors IA », « clonage vocal arnaque », « faux conseiller bancaire », « deepfake escroquerie », « AI Act ».</p></article>
+      <article class="tool-card is-planned"><span class="pill is-plan">Prévu</span><h4>Automatisation avec n8n</h4><p>Installation prévue de n8n (édition Community, gratuite) sur mon serveur Proxmox : récupération des flux, filtrage par mots-clés et envoi d’un résumé par e-mail. Il servira aussi à recevoir de l’actualité informatique générale.</p></article>
+    </div>
+
+    <h3 class="sub-title">Méthode</h3>
+    <ol class="pipeline">
+      <li><strong>Collecter</strong><span>Flux RSS et alertes regroupés automatiquement</span></li>
+      <li><strong>Filtrer</strong><span>Tri des articles selon leur pertinence pour le sujet</span></li>
+      <li><strong>Analyser</strong><span>Lecture approfondie et vérification des sources</span></li>
+      <li><strong>Archiver</strong><span>Fiche par article (date, source, résumé, mots-clés) et synthèse régulière</span></li>
+    </ol>
+    <p class="share-note">La fréquence de consultation sera définie une fois la solution d’automatisation mise en place.</p>
+  </div>
+</section>
+
+<!-- 7. Synthèse -->
+<section class="section" id="synthese">
+  <div class="wrap">
+    <h2>Synthèse</h2>
+    <p class="lead">Évolutions constatées, acteurs, enjeux et analyse personnelle</p>
+    <div class="empty">Synthèse en cours de rédaction : elle sera complétée au fil de la veille.</div>
+  </div>
+</section>
+
+<!-- 8. Sources -->
+<section class="section alt" id="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <p class="lead">Sources consultées le 22 novembre 2026</p>
+    <ol class="source-list">
+      <li><a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">FBI – Internet Crime Complaint Center, <em>2025 Internet Crime Report</em></a> (2026)</li>
+      <li><a href="https://www.fbi.gov/news/press-releases/cryptocurrency-and-ai-scams-bilk-americans-of-billions" target="_blank" rel="noopener">FBI – <em>Cryptocurrency and AI Scams Bilk Americans of Billions</em></a> (2026)</li>
+      <li><a href="https://scaminfo.ai/knowledge/fbi-ic3-2025-annual-report-internet-crime-losses-hit-a-record-209-billion-2026" target="_blank" rel="noopener">ScamInfo – Synthèse du rapport IC3 2025 (plaintes liées à l’IA des plus de 60 ans)</a> (2026)</li>
+      <li><a href="https://www.foxnews.com/tech/grandparents-identity-thefts-biggest-payday" target="_blank" rel="noopener">Fox News – Perte moyenne des victimes de plus de 60 ans et arnaques de détresse</a> (2026)</li>
+      <li><a href="https://money.com/how-the-grandparent-scam-works/" target="_blank" rel="noopener">Money – <em>How the grandparent scam works</em></a> (2026)</li>
+      <li><a href="https://www.investmentnews.com/practice-management/elder-fraud-losses-hit-3b-as-investment-scams-surge-42-ftc-says/268749" target="_blank" rel="noopener">InvestmentNews – <em>Elder fraud losses hit $3B as investment scams surge 42%, FTC says</em></a> (2026)</li>
+      <li><a href="https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes" target="_blank" rel="noopener">FTC – <em>Scammers use AI to enhance their family emergency schemes</em></a> (mars 2023)</li>
+      <li><a href="https://www.pour-les-personnes-agees.gouv.fr/annuaires-et-services/fiches-pratiques/fiche-pratique-les-bons-reflexes-pour-eviter-les-arnaques" target="_blank" rel="noopener">Pour-les-personnes-agees.gouv.fr – <em>Les bons réflexes pour éviter les arnaques</em></a></li>
+      <li><a href="https://www.aarp.org/money/scams-fraud/fbi-ftc-report-2025-losses.html" target="_blank" rel="noopener">AARP – <em>New FBI Report: $20.9 Billion Lost to Internet Crimes in 2025</em></a> (2026)</li>
+      <li><a href="https://www.malwarebytes.com/fr/blog/scams/2026/06/americans-lost-nearly-900-million-to-ai-powered-scams-fbi-says" target="_blank" rel="noopener">Malwarebytes – <em>Selon le FBI, les Américains ont perdu près de 900 millions de dollars à cause d’escroqueries basées sur l’IA</em></a> (8 juin 2026)</li>
+      <li><a href="https://www.cybermalveillance.gouv.fr/medias/2026/03/CP-RA2026.pdf" target="_blank" rel="noopener">Cybermalveillance.gouv.fr – Communiqué de presse du rapport d’activité 2025</a> (26 mars 2026)</li>
+      <li><a href="https://info.fr/arnaque-appels-silencieux-clonage-voix-ia-allo/" target="_blank" rel="noopener">info.fr – <em>Un simple « allô » suffit : l’arnaque qui clone votre voix en trois secondes</em></a> (chiffres Cybermalveillance.gouv.fr 2025)</li>
+      <li><a href="https://www.sophos.com/en-us/blog/scammers-deepfake-ceos-voice-to-talk-underling-into-243000-transfer" target="_blank" rel="noopener">Sophos – <em>Scammers deepfake CEO’s voice to talk underling into $243,000 transfer</em></a> (2019)</li>
+      <li><a href="https://leclaireur.fnac.com/article/224832-microsoft-devoile-une-ia-capable-dimiter-nimporte-quelle-voix/" target="_blank" rel="noopener">L’Éclaireur Fnac – <em>Microsoft dévoile une IA capable d’imiter n’importe quelle voix</em></a> (11 janvier 2023)</li>
+      <li><a href="https://fortune.com/europe/2024/05/17/arup-deepfake-fraud-scam-victim-hong-kong-25-million-cfo/" target="_blank" rel="noopener">Fortune – <em>A deepfake ‘CFO’ tricked the British design firm behind the Sydney Opera House in $25 million scam</em></a> (17 mai 2024)</li>
+      <li><a href="https://www.npr.org/2024/02/08/1230052884/the-fcc-says-ai-voices-in-robocalls-are-illegal" target="_blank" rel="noopener">NPR – <em>The FCC says AI voices in robocalls are illegal</em></a> (8 février 2024)</li>
+      <li><a href="https://openai.com/fr-FR/index/sora-2/" target="_blank" rel="noopener">OpenAI – <em>Sora 2 est arrivé</em></a> (30 septembre 2025)</li>
+      <li><a href="https://9to5mac.com/2024/04/18/romance-scam-face-swap/" target="_blank" rel="noopener">9to5Mac – <em>Latest romance scam tactic uses two phones with face-swap app</em></a> (18 avril 2024)</li>
+      <li><a href="https://fr.euronews.com/2025/01/16/brad-pitt-repond-a-la-francaise-escroquee-par-des-images-generees-par-lia" target="_blank" rel="noopener">Euronews – <em>Brad Pitt répond à la Française escroquée par des images générées par l’IA</em></a> (16 janvier 2025)</li>
+      <li><a href="https://www.assemblee-nationale.fr/dyn/17/questions/QANR5L17QE1720.pdf" target="_blank" rel="noopener">Assemblée nationale – Réponse ministérielle sur les sanctions des hypertrucages (loi SREN)</a></li>
+      <li><a href="https://www.resemble.ai/laws-and-regulations/france-sren-law-loi-n-2024-449" target="_blank" rel="noopener">Resemble AI – <em>France SREN Law (Loi n° 2024-449)</em></a></li>
+      <li><a href="https://www.service-public.gouv.fr/particuliers/actualites/A19003?lang=fr" target="_blank" rel="noopener">Service-Public.fr – <em>Démarchage téléphonique interdit : quelles sont les nouvelles règles ?</em></a> (2026)</li>
+      <li><a href="https://www.cbsnews.com/news/south-korea-deepfake-porn-law-ban-sexually-explicit-video-images" target="_blank" rel="noopener">CBS News – <em>South Korea set to criminalize possessing or watching sexually explicit deepfake videos</em></a> (septembre 2024)</li>
+      <li><a href="https://www.resemble.ai/laws-and-regulations/south-korea-sexual-violence-crimes-punishment-act-amendments" target="_blank" rel="noopener">Resemble AI – <em>South Korea Sexual Violence Crimes Punishment Act amendments</em></a></li>
+      <li><a href="https://next.ink/175644/la-chine-va-obliger-les-fournisseurs-de-contenus-generes-par-ia-a-les-etiqueter-comme-tels/" target="_blank" rel="noopener">Next – <em>La Chine va obliger les fournisseurs de contenus générés par IA à les étiqueter comme tels</em></a> (mars 2025)</li>
+      <li><a href="https://artificialintelligenceact.eu/fr/implementation-timeline/" target="_blank" rel="noopener">AI Act – <em>Calendrier de mise en œuvre</em></a></li>
+      <li><a href="https://tech-insider.org/fr/?p=854" target="_blank" rel="noopener">Tech Insider – Report de l’AI Act voté par le Parlement européen</a> (26 mars 2026)</li>
+      <li><a href="https://docs.n8n.io/hosting/community-edition-features" target="_blank" rel="noopener">n8n – <em>Community edition features</em></a> (documentation officielle)</li>
+    </ol>
   </div>
 </section>
 </main>
