@@ -20,10 +20,64 @@
 </ul>
 </nav>
 </header>
-<div class="page-head"><h1>Épreuve E6</h1><p>Situations professionnelles réalisées en entreprise</p></div>
+<div class="page-head"><h1>Épreuve E6</h1><p>Administration des systèmes et des réseaux – option SISR</p></div>
 <main>
 <section class="section">
-  <div class="wrap"><div class="empty">Mes situations professionnelles chez Bobochic Paris seront présentées ici.</div></div>
+  <div class="wrap synth">
+    <div class="synth-text">
+      <span class="eyebrow">Présentation de l’épreuve</span>
+      <h2 class="ent-title">Concevoir, déployer et exploiter une infrastructure</h2>
+      <p>L’épreuve E6 s’appuie sur deux réalisations professionnelles qui mobilisent les compétences du bloc « Administration des systèmes et des réseaux ». Chaque réalisation est décrite dans une fiche descriptive et doit pouvoir être présentée et démontrée lors de l’épreuve pratique.</p>
+      <p>Mes réalisations s’appuient sur des projets d’infrastructure de Bobochic Paris, préparés et testés dans mon laboratoire personnel avant leur mise en production.</p>
+      <span class="btn-blue is-disabled" aria-disabled="true">Fiches descriptives – bientôt disponibles</span>
+    </div>
+    <div class="obj-list">
+      <div class="obj"><span class="obj-tag">Conception</span><p>Analyse de l’existant et des besoins, choix d’architecture : segmentation VLAN, adressage, pare-feu.</p></div>
+      <div class="obj"><span class="obj-tag">Mise en œuvre</span><p>Déploiement d’une passerelle UniFi Cloud Gateway Ultra, configuration d’un switch Cisco Catalyst et des bornes Wi-Fi.</p></div>
+      <div class="obj"><span class="obj-tag">Exploitation</span><p>Supervision centralisée, tests de bon fonctionnement, sauvegarde et procédures de repli.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="realisations">
+  <div class="wrap">
+    <h2>Mes réalisations</h2>
+    <p class="lead">Deux projets d’infrastructure menés chez Bobochic Paris</p>
+    <div class="e5-grid">
+      <article class="e5-card">
+        <a class="e5-thumb e5-thumb-lab is-net" href="projet-vlan.html" tabindex="-1" aria-hidden="true"><span>VLAN 10 · 20 · … · 90</span><span class="e5-badge">En préparation</span></a>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation E6 – 01</span>
+          <h3><a href="projet-vlan.html">Segmentation du réseau en VLAN et déploiement d’une Cloud Gateway UniFi</a></h3>
+          <p>Restructuration du réseau du siège : neuf VLAN, pare-feu inter-segments, isolation des services sensibles et migration du contrôleur UniFi depuis le NAS vers une passerelle dédiée.</p>
+          <ul class="tags"><li>UniFi</li><li class="t-green">Cisco Catalyst</li><li class="t-orange">VLAN / VLSM</li><li>Pare-feu</li></ul>
+          <a class="e5-link" href="projet-vlan.html">Voir la réalisation <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="e5-card is-upcoming">
+        <div class="e5-thumb e5-thumb-lab is-backup" aria-hidden="true"><span>Sauvegarde · NAS</span><span class="e5-badge">En prévision</span></div>
+        <div class="e5-card-body">
+          <span class="e5-num">Réalisation E6 – 02</span>
+          <h3>Mise en place d’une nouvelle solution de sauvegarde</h3>
+          <p>Le NAS actuel, saturé, ne réalise plus les sauvegardes des comptes Google Workspace. Le projet prévoit un second NAS dédié aux sauvegardes, afin de relancer une copie saine, de tenter la récupération de l’ancienne et de réaffecter le premier NAS. À défaut d’investissement, la solution sera reproduite dans mon laboratoire Proxmox.</p>
+          <ul class="tags"><li>NAS Synology</li><li class="t-green">Sauvegarde</li><li class="t-orange">Restauration</li></ul>
+          <span class="e5-link is-muted">Page en préparation</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="laboratoire">
+  <div class="wrap">
+    <h2>Laboratoire de test</h2>
+    <p class="lead">Préparer et valider les configurations avant toute mise en production</p>
+    <div class="tool-grid">
+      <article class="tool-card"><span class="pill is-yes">Disponible</span><h4>Serveur Proxmox</h4><p>Serveur de virtualisation personnel, utilisé pour reproduire les infrastructures et tester les configurations sans risque pour le réseau de l’entreprise.</p></article>
+      <article class="tool-card is-planned"><span class="pill is-plan">Prévu</span><h4>Maquette réseau</h4><p>Reproduction de la segmentation VLAN (Cisco Packet Tracer et machines virtuelles) pour valider le plan d’adressage, les trunks et les règles de pare-feu.</p></article>
+      <article class="tool-card is-planned"><span class="pill is-plan">Prévu</span><h4>Sauvegarde virtualisée</h4><p>Solution de sauvegarde en machine virtuelle pour tester les copies planifiées et les restaurations de la réalisation 02.</p></article>
+    </div>
+  </div>
 </section>
 </main>
 <footer class="site-footer"><p>&copy; Diego Castillo – Portfolio BTS SIO 2027</p><p><a href="https://www.linkedin.com/in/diego-alberto-castillo-dc1997/" target="_blank" rel="noopener">LinkedIn</a></p></footer>

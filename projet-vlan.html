@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segmentation VLAN et Cloud Gateway UniFi – Portfolio BTS SIO 2027</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+<header class="site-header">
+<nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="index.html">Portfolio BTS SIO <span>2027</span></a>
+<button class="menu-btn" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+<ul class="menu">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="entreprise.html">Entreprise</a></li>
+<li><a href="e5.html">Épreuve E5</a></li>
+<li><a href="e6.html" aria-current="page">Épreuve E6</a></li>
+<li><a href="veille.html">Veille technologique</a></li>
+</ul>
+</nav>
+</header>
+<div class="proj-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="e6.html">Épreuve E6</a> <span aria-hidden="true">›</span> <a href="e6.html#realisations">Réalisations</a></nav>
+    <span class="proj-kicker">Réalisation E6 – 01 · En préparation</span>
+    <h1>Segmentation du réseau en VLAN et déploiement d’une Cloud Gateway UniFi</h1>
+    <p>Restructuration du réseau du siège pour isoler les services sensibles, maîtriser les flux entre segments et centraliser la gestion des bornes Wi-Fi.</p>
+  </div>
+</div>
+<main>
+<section class="section">
+  <div class="wrap proj-layout">
+    <article class="proj-body">
+      <section class="proj-sec" id="contexte">
+        <h2><span class="proj-num">01</span>Contexte et existant</h2>
+        <p>Le réseau du siège de Bobochic Paris repose sur une Livebox Pro, un switch Cisco Catalyst et quatre bornes Wi-Fi UniFi. L’optimisation du Wi-Fi a résolu les problèmes de lenteur, qui venaient exclusivement de la couche Wi-Fi : en filaire, le débit dépasse 800 Mbps.</p>
+        <p>En revanche, le réseau est entièrement « à plat » : aucune VLAN ni aucun pare-feu interne ne sépare les postes de travail, les invités, les imprimantes, le NAS et les services sensibles.</p><div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Équipement</th><th>Rôle actuel</th></tr></thead><tbody>
+          <tr><td>Orange Livebox Pro</td><td>Routeur et passerelle Internet (ONT intégré, mode bridge indisponible)</td></tr>
+          <tr><td>Switch Cisco Catalyst 2960-S PoE+ (48 ports)</td><td>Commutation filaire, protégé par un mot de passe non documenté</td></tr>
+          <tr><td>4 bornes UniFi (3 AC LR, 1 AC SHD)</td><td>Diffusion Wi-Fi 5, réglages radio optimisés (réalisation E5 n°03)</td></tr>
+          <tr><td>NAS Synology</td><td>Stockage de fichiers et hébergement du contrôleur UniFi Network dans un conteneur Docker</td></tr>
+          <tr><td>UniFi Cloud Gateway Ultra</td><td>Nouvelle passerelle destinée à gérer le réseau interne (VLAN, pare-feu, contrôleur)</td></tr>
+          </tbody></table></div>
+      </section>
+      <section class="proj-sec" id="besoin">
+        <h2><span class="proj-num">02</span>Expression du besoin et contraintes</h2>
+        <p>Le remplacement du routeur ne répond plus à un besoin de performance, mais à un objectif de <strong>sécurité et de segmentation</strong> :</p>
+        <ul class="check-list">
+          <li>créer et administrer un plan de VLAN complet depuis le contrôleur UniFi intégré à la Cloud Gateway Ultra ;</li>
+          <li>isoler les services sensibles (Finances, Juridique, RH, Digital) pour limiter la propagation d’un incident (logiciel malveillant, poste compromis) ;</li>
+          <li>centraliser la gestion des quatre bornes, aujourd’hui gérées par un conteneur Docker sur le NAS ;</li>
+          <li>conserver le serveur VPN WireGuard existant.</li>
+        </ul>
+        <p><strong>Contraintes identifiées.</strong></p>
+        <ul class="check-list is-arrow">
+          <li><strong>Livebox sans mode bridge</strong> : confirmé par le support Orange Pro, l’ONT est intégré à la box. La Cloud Gateway Ultra sera donc placée en cascade (double NAT), avec une règle DMZ sur la Livebox.</li>
+          <li><strong>Switch Cisco verrouillé</strong> : mot de passe d’origine inconnue. Une procédure de récupération (bootloader via le bouton MODE, contournement du fichier de configuration) permettra de retrouver l’accès sans perdre la configuration existante.</li>
+          <li><strong>Interruption de service</strong> : la bascule devra se faire en une seule session, en dehors des heures de présence du personnel.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="conception">
+        <h2><span class="proj-num">03</span>Conception de la solution</h2>
+        <figure class="net-diagram" aria-label="Architecture cible du réseau">
+  <svg viewBox="0 0 720 360" role="img">
+    <title>Architecture cible : Internet, Livebox Pro, Cloud Gateway Ultra, switch Cisco, bornes Wi-Fi, NAS et switchs secondaires</title>
+    <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#566b67"/></marker></defs>
+    <g font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">
+      <rect x="280" y="10" width="160" height="40" rx="10" fill="#eef2f1" stroke="#a9c4be"/><text x="360" y="35" fill="#1f2d2b">Internet (fibre)</text>
+      <rect x="280" y="80" width="160" height="44" rx="10" fill="#fff" stroke="#0F766E"/><text x="360" y="100" font-weight="700" fill="#10201C">Livebox Pro</text><text x="360" y="116" font-size="11" fill="#566b67">WAN, NAT, DMZ → passerelle</text>
+      <rect x="265" y="155" width="190" height="48" rx="10" fill="#0F766E"/><text x="360" y="176" font-weight="700" fill="#fff">UniFi Cloud Gateway Ultra</text><text x="360" y="193" font-size="11" fill="#d9f0ec">VLAN, pare-feu, contrôleur UniFi</text>
+      <rect x="265" y="235" width="190" height="44" rx="10" fill="#fff" stroke="#15803D"/><text x="360" y="255" font-weight="700" fill="#10201C">Cisco Catalyst 2960-S</text><text x="360" y="271" font-size="11" fill="#566b67">trunk 802.1Q</text>
+      <rect x="20" y="305" width="170" height="44" rx="10" fill="#fff" stroke="#a9c4be"/><text x="105" y="325" fill="#10201C">4 bornes UniFi</text><text x="105" y="341" font-size="11" fill="#566b67">trunk · 6 SSID</text>
+      <rect x="210" y="305" width="140" height="44" rx="10" fill="#fff" stroke="#a9c4be"/><text x="280" y="325" fill="#10201C">NAS Synology</text><text x="280" y="341" font-size="11" fill="#566b67">VLAN 80 Serveurs</text>
+      <rect x="370" y="305" width="150" height="44" rx="10" fill="#fff" stroke="#a9c4be"/><text x="445" y="325" fill="#10201C">Imprimantes</text><text x="445" y="341" font-size="11" fill="#566b67">VLAN 70</text>
+      <rect x="540" y="305" width="160" height="44" rx="10" fill="#fff" stroke="#a9c4be"/><text x="620" y="325" fill="#10201C">Switchs Netgear</text><text x="620" y="341" font-size="11" fill="#566b67">ports access</text>
+      <g stroke="#566b67" stroke-width="1.6" fill="none" marker-end="url(#ar)">
+        <line x1="360" y1="50" x2="360" y2="78"/><line x1="360" y1="124" x2="360" y2="153"/><line x1="360" y1="203" x2="360" y2="233"/>
+        <path d="M300 279 L105 303"/><path d="M335 279 L280 303"/><path d="M385 279 L445 303"/><path d="M420 279 L620 303"/>
+      </g>
+      <text x="470" y="140" font-size="11" fill="#7c3aed" text-anchor="start">Double NAT</text>
+    </g>
+  </svg>
+  <figcaption>Architecture cible : la Livebox reste en tête de chaîne, la Cloud Gateway Ultra gère tout le réseau interne</figcaption>
+</figure><p>Neuf VLAN ont été définies et créées à titre d’essai dans le contrôleur de la Cloud Gateway Ultra, en environnement isolé. Deux versions d’adressage ont été préparées : une <strong>version pratique</strong> en /24 uniforme, retenue pour la production car plus simple à administrer et à transmettre, et une <strong>version VLSM</strong> dimensionnée au besoin réel de chaque segment.</p><div class="table-wrap"><table class="data-table"><thead><tr><th>VLAN</th><th>Nom</th><th>Sous-réseau (version pratique)</th><th>Niveau</th><th>Besoin réel</th><th>Masque VLSM</th></tr></thead><tbody><tr><td><strong>10</strong></td><td>Corporatif</td><td><code>192.168.10.0/24</code></td><td><span class="pill is-no">Général</span></td><td>~40-50</td><td>/24</td></tr><tr><td><strong>20</strong></td><td>Finances</td><td><code>192.168.20.0/24</code></td><td><span class="pill is-plan">Sensible</span></td><td>~6</td><td>/28</td></tr><tr><td><strong>30</strong></td><td>Juridique</td><td><code>192.168.30.0/24</code></td><td><span class="pill is-plan">Sensible</span></td><td>~6</td><td>/28</td></tr><tr><td><strong>40</strong></td><td>RH</td><td><code>192.168.40.0/24</code></td><td><span class="pill is-plan">Sensible</span></td><td>~6</td><td>/28</td></tr><tr><td><strong>50</strong></td><td>Digital</td><td><code>192.168.50.0/24</code></td><td><span class="pill is-plan">Sensible</span></td><td>~6</td><td>/28</td></tr><tr><td><strong>60</strong></td><td>Invités</td><td><code>192.168.60.0/24</code></td><td><span class="pill is-no">Général</span></td><td>Variable</td><td>/24</td></tr><tr><td><strong>70</strong></td><td>Imprimantes</td><td><code>192.168.70.0/24</code></td><td><span class="pill is-no">Général</span></td><td>3</td><td>/29</td></tr><tr><td><strong>80</strong></td><td>Serveurs</td><td><code>192.168.80.0/24</code></td><td><span class="pill is-crit">Critique</span></td><td>1-2</td><td>/29</td></tr><tr><td><strong>90</strong></td><td>Gestion</td><td><code>192.168.90.0/24</code></td><td><span class="pill is-crit">Critique</span></td><td>~6</td><td>/28</td></tr></tbody></table></div>
+        <p><strong>Règles complémentaires prévues.</strong></p>
+        <ul class="check-list">
+          <li>six SSID diffusés par les quatre bornes (Corporatif, Finances, Juridique, RH, Digital, Invités), chacun associé à sa VLAN ;</li>
+          <li>accès du VLAN Corporatif au VLAN Serveurs limité aux ports nécessaires à l’administration du NAS ;</li>
+          <li>accès au VLAN Gestion réservé à l’adresse IP fixe de l’administrateur ;</li>
+          <li>réflecteur mDNS entre les VLAN Corporatif et Imprimantes pour conserver la découverte automatique des imprimantes ;</li>
+          <li>ordinateur portable de secours préconfiguré et procédure d’accès d’urgence documentée.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="miseenoeuvre">
+        <h2><span class="proj-num">04</span>Mise en œuvre prévue</h2>
+        <ol class="steps"><li><strong>Récupérer l’accès au switch Cisco</strong><p>Procédure de récupération du mot de passe, puis analyse de la configuration existante (show running-config).</p></li><li><strong>Préparer un repli</strong><p>Réserver une plage de ports libres pour la nouvelle configuration et conserver les ports actuellement utilisés comme solution de repli.</p></li><li><strong>Sauvegarder le contrôleur existant</strong><p>Export complet du contrôleur UniFi Network hébergé dans Docker sur le NAS.</p></li><li><strong>Restaurer sur la Cloud Gateway Ultra</strong><p>Réinitialisation de la passerelle puis restauration de la sauvegarde, pour conserver l’adoption des bornes et leurs réglages radio.</p></li><li><strong>Créer les VLAN et les SSID</strong><p>Recréation des neuf VLAN selon le plan pratique, puis association des SSID.</p></li><li><strong>Configurer le switch</strong><p>Ports trunk vers la passerelle et les bornes, ports access vers le NAS, les imprimantes filaires et les switchs secondaires.</p></li><li><strong>Appliquer les règles de pare-feu</strong><p>Accès au NAS, accès restreint au VLAN Gestion, réflecteur mDNS.</p></li><li><strong>Basculer</strong><p>DMZ de la Livebox vers la passerelle, puis raccordement physique WAN et LAN.</p></li><li><strong>Vérifier</strong><p>Tests d’accès Internet, Wi-Fi par VLAN, NAS, interfaces de gestion et imprimantes avant de valider le déploiement.</p></li></ol>
+      </section>
+      <section class="proj-sec" id="tests">
+        <h2><span class="proj-num">05</span>Tests et résultats attendus</h2>
+        <ul class="check-list">
+          <li>chaque SSID attribue une adresse IP dans le sous-réseau de sa VLAN ;</li>
+          <li>un poste d’un service sensible n’atteint pas les autres VLAN sensibles ;</li>
+          <li>le NAS reste administrable depuis le VLAN Corporatif sur les seuls ports autorisés ;</li>
+          <li>les interfaces de gestion ne sont accessibles que depuis le poste administrateur ;</li>
+          <li>les imprimantes restent détectées automatiquement depuis les postes Windows ;</li>
+          <li>les quatre bornes restent adoptées et conservent leurs réglages radio.</li>
+        </ul>
+        <div class="gap-box is-info"><strong>Projet en cours de préparation</strong><p>Le plan est finalisé et le matériel est disponible ; la mise en production attend la validation de la direction et la planification d’une intervention hors des heures d’ouverture. Les résultats et les preuves (captures, configurations) seront ajoutés après le déploiement.</p></div>
+      </section>
+      <section class="proj-sec" id="vigilance">
+        <h2><span class="proj-num">06</span>Points de vigilance et évolutions envisagées</h2>
+        <ul class="check-list is-arrow">
+          <li>Le nombre de SSID (six) consomme du temps d’antenne sur des bornes Wi-Fi 5 ; une alternative à étudier consiste à réduire leur nombre en attribuant les VLAN par mot de passe (PPSK) ou par authentification 802.1X avec RADIUS.</li>
+          <li>Le VLAN de gestion impose d’adapter l’adresse de management du switch et la VLAN native des bornes pour ne pas perdre leur adoption pendant la bascule.</li>
+          <li>Le serveur VPN WireGuard devra être accessible à travers le double NAT, avec des règles adaptées vers les VLAN autorisées.</li>
+          <li>Une maquette de la segmentation sera réalisée en laboratoire (Packet Tracer et machines virtuelles) avant la mise en production.</li>
+        </ul>
+      </section>
+      <section class="proj-sec" id="competences">
+        <h2><span class="proj-num">07</span>Compétences mobilisées</h2>
+        <ul class="comp-list"><li><strong>Concevoir une solution d’infrastructure réseau</strong><span>Analyse de l’existant et des contraintes, plan de segmentation en neuf VLAN, dimensionnement VLSM, matrice de flux et règles de pare-feu.</span></li><li><strong>Installer, tester et déployer une solution d’infrastructure réseau</strong><span>Mise en service de la Cloud Gateway Ultra, configuration des VLAN, des SSID et du switch Cisco, tests de bon fonctionnement par segment.</span></li><li><strong>Exploiter, dépanner et superviser une solution d’infrastructure réseau</strong><span>Récupération d’accès au switch, centralisation de la supervision des bornes dans le contrôleur UniFi, procédure de repli en cas d’incident.</span></li></ul>
+      </section>
+    </article>
+    <aside class="proj-aside">
+      <div class="aside-card">
+        <h3>Fiche projet</h3>
+        <dl class="aside-facts"><dt>Type</dt><dd>Réalisation en milieu professionnel</dd><dt>Entreprise</dt><dd>Bobochic Paris – siège de Vincennes</dd><dt>Statut</dt><dd>En préparation</dd><dt>Matériel</dt><dd>UniFi Cloud Gateway Ultra, Cisco Catalyst 2960-S, 4 bornes UniFi, NAS Synology</dd><dt>Outils</dt><dd>UniFi Network, CLI Cisco, PuTTY</dd></dl>
+        <h4>Compétences E6</h4>
+        <ul class="tags tags-col"><li>Concevoir</li><li class="t-green">Installer, tester, déployer</li><li class="t-orange">Exploiter, dépanner, superviser</li></ul>
+        <h4>Documents</h4>
+        <span class="doc-btn is-disabled"><span aria-hidden="true">PDF</span>Fiche descriptive – à venir</span>
+      </div>
+      <nav class="aside-toc" aria-label="Sommaire"><h4>Sommaire</h4><ol><li><a href="#contexte">Contexte et existant</a></li><li><a href="#besoin">Expression du besoin et contraintes</a></li><li><a href="#conception">Conception de la solution</a></li><li><a href="#miseenoeuvre">Mise en œuvre prévue</a></li><li><a href="#tests">Tests et résultats attendus</a></li><li><a href="#vigilance">Points de vigilance et évolutions envisagées</a></li><li><a href="#competences">Compétences mobilisées</a></li></ol></nav>
+    </aside>
+  </div>
+</section>
+<section class="section alt">
+  <div class="wrap"><nav class="proj-pager" aria-label="Navigation"><span></span><a class="pager-back" href="e6.html#realisations">Retour à l’épreuve E6</a><span></span></nav></div>
+</section>
+</main>
+<footer class="site-footer"><p>&copy; Diego Castillo – Portfolio BTS SIO 2027</p><p><a href="https://www.linkedin.com/in/diego-alberto-castillo-dc1997/" target="_blank" rel="noopener">LinkedIn</a></p></footer>
+<a class="totop" href="#top" aria-label="Retour en haut">↑</a>
+<script src="script.js"></script>
+</body>
+</html>
