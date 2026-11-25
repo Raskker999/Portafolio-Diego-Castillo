@@ -21,12 +21,11 @@
 </nav>
 </header>
 <div class="ent-hero">
-  <!-- Média de couverture : image actuelle.
-       Pour passer à une vidéo : déposer le fichier dans videos/bobochic.mp4,
-       puis remplacer la balise <img> ci-dessous par :
-       <video class="ent-hero-media" src="videos/bobochic.mp4" poster="images/bobochic-hero.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
-       L'image reste affichée comme image de secours (poster) pendant le chargement. -->
-  <img class="ent-hero-media" src="images/bobochic-hero.jpg" alt="" aria-hidden="true">
+  <!-- Vidéo de couverture (sans son, en boucle). L'image poster s'affiche pendant le chargement
+       et remplace la vidéo si l'utilisateur a demandé à réduire les animations. -->
+  <video class="ent-hero-media" autoplay muted loop playsinline preload="auto" poster="images/bobochic-poster.jpg" aria-hidden="true">
+    <source src="videos/bobochic.mp4" type="video/mp4">
+  </video>
   <div class="ent-hero-text">
     <h1>Mon alternance chez Bobochic Paris</h1>
     <p>Présentation de l’entreprise et de mon poste</p>
